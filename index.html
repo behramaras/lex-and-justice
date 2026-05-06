@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Sticky navbar: stays pinned to the top while scrolling and collapses into a hamburger menu on smaller screens. The Services item opens a dropdown linking into each practice area. This whole navbar is repeated on every page; only the "active" class moves to mark the current page. -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white main-navbar sticky-top border-bottom">
       <div class="container">
@@ -47,6 +48,7 @@
   </header>
 
   <main>
+    <!-- Hero: full-width dark navy gradient with the firm's main pitch and two CTAs (consultation + services). The two-line headline is split into spans so the bottom line can stay on a single line at desktop widths. -->
     <section class="hero-section">
       <div class="container">
         <div class="hero-content">
@@ -63,6 +65,7 @@
       </div>
     </section>
 
+    <!-- Stats strip: four key firm numbers shown right under the hero. Sits on a soft grey band and folds from 4 columns to 2 columns on mobile. -->
     <section class="stats-section" aria-labelledby="firmStatsHeading">
       <div class="container">
         <h2 id="firmStatsHeading" class="visually-hidden">Firm Statistics</h2>
@@ -87,6 +90,7 @@
       </div>
     </section>
 
+    <!-- Practice area cards: highlights four core services on the home page. The same card pattern is reused (in a 6-card grid) on the services page. -->
     <section class="section-space practice-section">
       <div class="container">
         <div class="section-heading text-center">
@@ -141,6 +145,7 @@
       </div>
     </section>
 
+    <!-- Why choose us: four feature cards (icon + title + blurb) on the muted grey band, used to break up the white practice-cards section above. -->
     <section class="section-space section-muted why-section">
       <div class="container">
         <div class="section-heading text-center">
@@ -187,6 +192,7 @@
       </div>
     </section>
 
+    <!-- Testimonials: three client quote cards. Each card has the gold quote icon, the testimonial text, the author name and their role/company. -->
     <section class="section-space testimonials-section">
       <div class="container">
         <div class="section-heading text-center">
@@ -227,6 +233,7 @@
       </div>
     </section>
 
+    <!-- Closing CTA: dark navy band that mirrors the hero, drives users to the contact page as the last thing they see before the footer. -->
     <section class="section-space cta-section">
       <div class="container text-center">
         <h2>Ready to Get Started?</h2>
@@ -236,6 +243,7 @@
     </section>
   </main>
 
+  <!-- Footer: 4-column layout — brand & socials, practice areas, quick links, and contact info — followed by a thin bar with the copyright and legal links. Same footer is used on every page. -->
   <footer class="footer-section">
     <div class="container">
       <div class="row g-4 gy-lg-0">
@@ -287,6 +295,7 @@
     </div>
   </footer>
 
+  <!-- Bootstrap bundle drives the navbar collapse, dropdowns and any modals. UserWay adds an accessibility menu — pinned to the bottom-right via CSS so it doesn't clash with the sticky navbar. -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://cdn.userway.org/widget.js" data-account="FREE"></script>
 </body>
