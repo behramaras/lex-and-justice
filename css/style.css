@@ -1,3 +1,16 @@
+/* =====================================================
+   Lex & Justice — site stylesheet
+   Loaded after Bootstrap so any rule in here intentionally
+   overrides a Bootstrap default. Layout is built on
+   Bootstrap's grid + utility classes; everything below is
+   the brand layer (colours, fonts, hero, cards, etc.).
+   ===================================================== */
+
+/* ===== DESIGN TOKENS ===== */
+/* Colour palette + shared tokens used across every page.
+   Anything brand-related should live here so the whole site
+   can be re-themed by editing this one block. Naming
+   follows shade weights (50 = lightest, 950 = darkest). */
 :root {
   --navy-950: #03142d;
   --navy-900: #061b3a;
@@ -11,6 +24,13 @@
   --white: #ffffff;
 }
 
+/* ===== BASE TYPOGRAPHY ===== */
+/* Inter is the UI/body face, Cormorant Garamond is used for
+   headings, and Playfair Display is reserved for the
+   "Lex & Justice" wordmark. The wordmark uses !important so
+   that nested contexts (e.g. links, dark backgrounds) can't
+   accidentally restyle it; the footer overrides it back to
+   white further down. */
 body {
   font-family: "Inter", sans-serif;
   color: var(--text-900);
@@ -38,6 +58,12 @@ h5,
   color: #ffffff !important;
 }
 
+/* ===== LAYOUT HELPERS ===== */
+/* .section-space gives every <section> the same vertical
+   rhythm. .section-muted swaps the white background out for
+   the soft grey band used to alternate sections.
+   .section-heading centres the title + intro line that sits
+   at the top of most sections. */
 .section-space {
   padding: 92px 0;
 }
@@ -60,6 +86,11 @@ h5,
   line-height: 1.7;
 }
 
+/* ===== NAVBAR ===== */
+/* Very high z-index needed to keep the sticky navbar above
+   the UserWay accessibility widget — UserWay injects its
+   own button at near-max z-index, and without this it would
+   render on top of the dropdown when scrolling. */
 .main-navbar {
   min-height: 84px;
   border-color: #e8ebee !important;
@@ -115,6 +146,11 @@ h5,
   color: #0a1628;
 }
 
+/* ===== BUTTONS ===== */
+/* .btn-nav is the dark navy "Contact Us" pill in the navbar
+   and the default primary button across the site. The
+   .active / :active overrides below stop Bootstrap from
+   swapping it to its built-in pressed-state colours. */
 .btn-nav {
   border-radius: 5px;
   background-color: var(--navy-950);
@@ -136,6 +172,12 @@ h5,
   color: #fff !important;
 }
 
+/* ===== HOME HERO ===== */
+/* Radial gradient anchored top-left so the side where the
+   headline sits is the lighter spot. The huge ⚖ glyph in
+   ::after is purely decorative — kept very low opacity so
+   it reads as a watermark rather than competing with the
+   text. */
 .hero-section {
   background: radial-gradient(circle at 18% 10%, #1c355f 0%, var(--navy-950) 60%, #031028 100%);
   min-height: 620px;
@@ -173,6 +215,10 @@ h5,
   display: block;
 }
 
+/* Keep the second line ("You Can Trust") on a single line
+   at desktop widths so the headline reads as two clean
+   rows. The mobile media query below releases this so
+   nothing overflows on narrow screens. */
 .hero-content h1 .hero-line:last-child {
   white-space: nowrap;
 }
@@ -193,6 +239,9 @@ h5,
   transition: all 0.3s ease;
 }
 
+/* Global hover state — every .btn turns gold on hover/focus.
+   Done in one place rather than per-variant so all buttons
+   (navy, white, outline) share the same hover identity. */
 .btn:hover,
 .btn:focus {
   background-color: var(--gold-500) !important;
@@ -200,6 +249,10 @@ h5,
   color: #fff !important;
 }
 
+/* ===== STATS STRIP ===== */
+/* Tighter vertical padding than .section-space so the strip
+   reads as a slim band sitting directly under the hero,
+   rather than as a full section. */
 .stats-section {
   padding: 38px 0;
   background-color: var(--bg-soft);
@@ -218,6 +271,9 @@ h5,
   margin: 0;
 }
 
+/* ===== WHY CHOOSE US / FEATURE CARDS ===== */
+/* Round gold-tinted icon circle reused inside feature
+   cards, mission items and the "under construction" page. */
 .why-section .feature-icon {
   width: 56px;
   height: 56px;
@@ -261,6 +317,10 @@ h5,
   box-shadow: 0 12px 26px rgba(12, 27, 52, 0.08);
 }
 
+/* ===== TESTIMONIAL & PRACTICE CARDS ===== */
+/* Both card variants share the same border, hover lift and
+   gold-tinted hover border. Defined together so there's a
+   single source of truth for the card hover behaviour. */
 .testimonial-card,
 .practice-card {
   border: 1px solid var(--line-200);
@@ -326,6 +386,10 @@ h5,
   font-size: 0.96rem;
 }
 
+/* ===== INLINE GOLD LINK ===== */
+/* Used for the "Learn more →" / "View all services →"
+   style links inside cards and sidebars. Slight horizontal
+   nudge on hover for a subtle "leading the eye" cue. */
 .text-link {
   color: var(--gold-500);
   text-decoration: none;
@@ -342,6 +406,10 @@ h5,
   transform: translateX(2px);
 }
 
+/* ===== CLOSING CTA BAND ===== */
+/* Dark navy band that closes most pages, mirroring the hero
+   so the page feels bookended. The thick translucent white
+   bottom border separates it visually from the footer. */
 .cta-section {
   background-color: var(--navy-950);
   color: #fff;
@@ -361,6 +429,10 @@ h5,
   margin-bottom: 34px;
 }
 
+/* ===== FOOTER ===== */
+/* Same navy as the hero/CTA. Text is intentionally a slightly
+   muted white (rgba 0.84) so body copy doesn't compete with
+   the column titles, which are pure white for hierarchy. */
 .footer-section {
   background-color: var(--navy-950);
   color: #fff;
@@ -423,6 +495,10 @@ h5,
   margin: 0;
 }
 
+/* ===== RESPONSIVE: GLOBAL ===== */
+/* Breakpoints follow Bootstrap's: 991.98px = lg, 575.98px =
+   sm. Sticking to those values keeps these rules in sync
+   with the grid behaviour we get from Bootstrap's classes. */
 @media (max-width: 991.98px) {
   .navbar-collapse {
     padding-top: 0.75rem;
@@ -476,6 +552,9 @@ h5,
   }
 }
 
+/* ===== ABOUT PAGE ===== */
+/* Shorter dark hero variant — same gradient as the home
+   hero, just less tall and without CTAs. */
 .about-hero {
   background: radial-gradient(circle at 18% 8%, #1b355f 0%, var(--navy-950) 62%, #031028 100%);
   min-height: 310px;
@@ -582,6 +661,10 @@ h5,
   margin-bottom: 34px;
 }
 
+/* ===== ABOUT — HISTORY TIMELINE ===== */
+/* Each row is a 3-column grid (year | gold dot | text) so
+   the dots line up perfectly down the page regardless of
+   how long any individual description is. */
 .history-timeline {
   max-width: 660px;
 }
@@ -618,6 +701,10 @@ h5,
   line-height: 1.45;
 }
 
+/* ===== SHARED TEAM / ABOUT CTA ===== */
+/* .team-cta is the muted-band CTA reused by the about page
+   (linking to the team) and the team page (linking to
+   careers). Same look, different copy. */
 .team-cta h2 {
   font-size: clamp(2.6rem, 4.5vw, 3.6rem);
   margin-bottom: 8px;
@@ -672,6 +759,11 @@ h5,
   }
 }
 
+/* ===== INNER PAGE HERO + SERVICES PAGE ===== */
+/* .services-hero is the shorter dark hero shared by every
+   inner page (services, team, news, careers, contact).
+   Page-specific classes (.team-hero, .news-hero, etc.)
+   simply tweak the min-height. */
 .services-hero {
   background: radial-gradient(circle at 18% 8%, #1b355f 0%, var(--navy-950) 62%, #031028 100%);
   min-height: 210px;
@@ -729,6 +821,11 @@ h5,
   }
 }
 
+/* ===== PRACTICE AREA DETAIL PAGE ===== */
+/* Two-column article layout: main content (~65%) on the
+   left, sidebar (~35%) on the right. Has its own breadcrumb
+   bar above instead of a tall dark hero so the article can
+   start higher up the page. */
 .practice-detail-main {
   background-color: var(--white);
 }
@@ -841,6 +938,10 @@ h5,
   color: #0a1628;
 }
 
+/* ===== FAQ ACCORDION ===== */
+/* Bootstrap's default chevron is replaced with bootstrap-icons
+   glyphs (\F286 closed, \F282 open) so the accordion arrow
+   matches the rest of the site's icon set. */
 .faq-block .accordion-item {
   border: 1px solid var(--line-200);
   border-radius: 4px;
@@ -896,6 +997,10 @@ h5,
   box-shadow: none;
 }
 
+/* ===== PRACTICE DETAIL — SIDEBAR ===== */
+/* Two stacked cards: a dark CTA card with the consultation
+   button + phone/email, then a white "related services"
+   card. Stacks below the article body on tablets and below. */
 .detail-sidebar {
   display: flex;
   flex-direction: column;
@@ -1020,6 +1125,11 @@ h5,
   }
 }
 
+/* ===== TEAM PAGE ===== */
+/* Cards use a fixed 1:1 aspect ratio for photos so faces
+   line up cleanly across rows. The image scales gently
+   (1.05) on hover/focus-within for a subtle interaction
+   without overhauling the layout. */
 .team-hero {
   min-height: 240px;
 }
@@ -1138,6 +1248,11 @@ h5,
   }
 }
 
+/* ===== NEWS PAGE ===== */
+/* News cards are a flex column so the meta/title/excerpt
+   sit at the top and the footer (author + date + read link)
+   pins to the bottom — keeps the rows visually aligned even
+   when excerpts vary in length. */
 .news-hero {
   min-height: 240px;
 }
@@ -1289,6 +1404,10 @@ h5,
   transition: all 0.3s ease;
 }
 
+/* ===== NEWSLETTER SIGNUP ===== */
+/* Flex row: input grows, button stays its natural size. The
+   input has flex: 1 1 260px so it wraps to its own line on
+   very narrow screens instead of squashing the button. */
 .newsletter-section h2 {
   font-size: clamp(2rem, 3.4vw, 2.6rem);
   margin-bottom: 8px;
@@ -1329,6 +1448,11 @@ h5,
   padding: 10px 24px;
 }
 
+/* ===== UNDER CONSTRUCTION PAGE ===== */
+/* min-height: 100vh minus an ~84px navbar and an ~320px
+   footer so the placeholder card sits comfortably
+   centred no matter how tall the viewport is, without
+   pushing the footer off-screen. */
 .under-construction-section {
   padding: 96px 0;
   background-color: var(--bg-soft);
@@ -1399,6 +1523,7 @@ h5,
   }
 }
 
+/* ===== CAREERS PAGE ===== */
 .careers-hero {
   min-height: 240px;
 }
@@ -1425,6 +1550,10 @@ h5,
   margin-bottom: 36px;
 }
 
+/* ===== CAREERS — OPEN ROLES ===== */
+/* Flex column layout so the "View Details" link can be
+   pinned to the bottom of each card with margin-top: auto,
+   keeping the link row aligned across cards. */
 .opening-card {
   background-color: #fff;
   border: 1px solid var(--line-200);
@@ -1511,6 +1640,10 @@ h5,
   margin-bottom: 28px;
 }
 
+/* ===== CAREERS — BENEFITS GRID ===== */
+/* Four columns on desktop; the responsive blocks at the
+   bottom of this file collapse it to two on tablets and
+   one on phones. */
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1540,6 +1673,10 @@ h5,
   margin-bottom: 28px;
 }
 
+/* ===== CAREERS — APPLICATION FORM ===== */
+/* White card sitting on the muted band so the form pops
+   visually. Centred with a max-width to keep line lengths
+   comfortable on wide screens. */
 .application-form {
   background-color: #fff;
   border: 1px solid var(--line-200);
@@ -1614,6 +1751,10 @@ textarea.application-input {
   font-size: 0.84rem;
 }
 
+/* Visually hide the real <input type="file"> while keeping
+   it focusable and clickable — the dashed .resume-upload
+   label is what the user actually sees and interacts with.
+   Standard "visually-hidden" pattern. */
 .resume-upload-input {
   position: absolute;
   width: 1px;
@@ -1638,6 +1779,10 @@ textarea.application-input {
   margin: 4px 0 0;
 }
 
+/* ===== SHARED SUCCESS MODAL (careers + contact) ===== */
+/* Gold top border is the only structural deviation from a
+   plain Bootstrap modal — used as a brand accent that
+   matches the gold tick icon inside the modal body. */
 .application-modal .modal-content {
   border: 0;
   border-top: 4px solid var(--gold-500);
@@ -1717,6 +1862,7 @@ textarea.application-input {
   }
 }
 
+/* ===== CONTACT PAGE ===== */
 .contact-hero {
   min-height: 240px;
 }
@@ -1843,6 +1989,11 @@ textarea.contact-input {
   color: var(--gold-500);
 }
 
+/* ===== CONTACT — EMERGENCY CARD ===== */
+/* Sits at the bottom of the contact info column so urgent
+   24/7 calls don't have to scroll for a number. Slightly
+   different background to set it apart from the regular
+   contact info above. */
 .emergency-contact-card {
   background-color: #f4f6f9;
   border: 1px solid var(--line-200);
@@ -1880,6 +2031,12 @@ textarea.contact-input {
   text-decoration: underline;
 }
 
+/* ===== USERWAY ACCESSIBILITY WIDGET ===== */
+/* UserWay injects its toggle button at runtime and tries
+   to position itself wherever it likes. We pin it bottom-
+   right so it never overlaps the sticky navbar or the
+   contact CTAs. !important is unavoidable here because
+   UserWay sets these properties inline on its own elements. */
 #userwayAccessibilityIcon,
 .uwy,
 .uwy.userway,
