@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Sticky navbar: stays pinned to the top while scrolling and collapses into a hamburger menu on smaller screens. The Services item opens a dropdown linking into each practice area. This whole navbar is repeated on every page; only the "active" class moves to mark the current page. -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white main-navbar sticky-top border-bottom">
       <div class="container">
@@ -47,6 +48,7 @@
   </header>
 
   <main>
+    <!-- Page hero: shared .services-hero block with a slightly taller .team-hero variant so the heading + intro have more breathing room. -->
     <section class="services-hero team-hero">
       <div class="container">
         <div class="hero-content services-hero-content">
@@ -56,6 +58,7 @@
       </div>
     </section>
 
+    <!-- Team grid: photo + name + title + practice area + bio + email/LinkedIn icons per attorney. Square 1:1 photos so faces line up cleanly across rows; the image scales gently on hover. Goes from 1 column on phones to 2 on tablets to 3 on desktop. -->
     <section class="section-space team-section">
       <div class="container">
         <div class="section-heading text-center">
@@ -175,6 +178,7 @@
       </div>
     </section>
 
+    <!-- Careers teaser: same .team-cta block used on the about page, but here it links onward to the careers page instead of back to the team page. -->
     <section class="section-space section-muted team-cta">
       <div class="container text-center">
         <h2>Join Our Team</h2>
@@ -184,6 +188,7 @@
     </section>
   </main>
 
+  <!-- Footer: 4-column layout — brand & socials, practice areas, quick links, and contact info — followed by a thin bar with the copyright and legal links. Same footer is used on every page. -->
   <footer class="footer-section">
     <div class="container">
       <div class="row g-4 gy-lg-0">
@@ -235,6 +240,7 @@
     </div>
   </footer>
 
+  <!-- Bootstrap bundle drives the navbar collapse, dropdowns and any modals. UserWay adds an accessibility menu — pinned to the bottom-right via CSS so it doesn't clash with the sticky navbar. -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://cdn.userway.org/widget.js" data-account="FREE"></script>
 </body>
