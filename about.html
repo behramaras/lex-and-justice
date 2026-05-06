@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Sticky navbar: stays pinned to the top while scrolling and collapses into a hamburger menu on smaller screens. The Services item opens a dropdown linking into each practice area. This whole navbar is repeated on every page; only the "active" class moves to mark the current page. -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white main-navbar sticky-top border-bottom">
       <div class="container">
@@ -47,6 +48,7 @@
   </header>
 
   <main>
+    <!-- About hero: shorter version of the home hero — same dark navy gradient, just the page title and a one-line intro (no CTAs). -->
     <section class="about-hero">
       <div class="container">
         <div class="hero-content about-hero-content">
@@ -56,6 +58,7 @@
       </div>
     </section>
 
+    <!-- Our Story: two-column layout (text + photo). On mobile the photo drops below the text. The image gets explicit width/height to reserve space and avoid layout shift while loading. -->
     <section class="section-space about-story-section">
       <div class="container">
         <div class="row align-items-center g-5">
@@ -78,6 +81,7 @@
       </div>
     </section>
 
+    <!-- Mission & Values: four icon + heading + paragraph blocks on the muted grey band. Stays as 2 columns on smaller screens, 4 on desktop. -->
     <section class="section-space section-muted mission-section">
       <div class="container">
         <div class="section-heading text-center">
@@ -117,6 +121,7 @@
       </div>
     </section>
 
+    <!-- History timeline: each row is a CSS grid with three cells (year | gold dot | description). Centered with a max-width so it stays readable on wide screens. -->
     <section class="section-space history-section">
       <div class="container">
         <div class="section-heading text-center">
@@ -158,6 +163,7 @@
       </div>
     </section>
 
+    <!-- Team teaser: short CTA pushing visitors to the dedicated Our People page. Same .team-cta block is reused on the team page (linking to careers there). -->
     <section class="section-space section-muted team-cta">
       <div class="container text-center">
         <h2>Meet Our Team</h2>
@@ -166,6 +172,7 @@
       </div>
     </section>
 
+    <!-- Closing CTA: same dark navy band as the home page, but with .about-cta-compact trimming the top padding so it sits closer to the team teaser above. -->
     <section class="section-space cta-section about-cta-compact">
       <div class="container text-center">
         <h2>Experience the Difference</h2>
@@ -175,6 +182,7 @@
     </section>
   </main>
 
+  <!-- Footer: 4-column layout — brand & socials, practice areas, quick links, and contact info — followed by a thin bar with the copyright and legal links. Same footer is used on every page. -->
   <footer class="footer-section">
     <div class="container">
       <div class="row g-4 gy-lg-0">
@@ -226,6 +234,7 @@
     </div>
   </footer>
 
+  <!-- Bootstrap bundle drives the navbar collapse, dropdowns and any modals. UserWay adds an accessibility menu — pinned to the bottom-right via CSS so it doesn't clash with the sticky navbar. -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://cdn.userway.org/widget.js" data-account="FREE"></script>
 </body>
