@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Sticky navbar: stays pinned to the top while scrolling and collapses into a hamburger menu on smaller screens. The Services item opens a dropdown linking into each practice area. This whole navbar is repeated on every page; only the "active" class moves to mark the current page. -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white main-navbar sticky-top border-bottom">
       <div class="container">
@@ -47,6 +48,7 @@
   </header>
 
   <main>
+    <!-- Page hero: shared .services-hero block, with .careers-hero giving it a slightly taller minimum height (matches the team and news heroes). -->
     <section class="services-hero careers-hero">
       <div class="container">
         <div class="hero-content services-hero-content">
@@ -56,6 +58,7 @@
       </div>
     </section>
 
+    <!-- Why work with us: short pitch + four headline numbers (years, people, satisfaction, practice areas). The numbers re-use the home-page stats look (gold serif figures over grey labels). -->
     <section class="section-space why-work-section">
       <div class="container">
         <div class="section-heading text-center">
@@ -83,6 +86,7 @@
       </div>
     </section>
 
+    <!-- Current openings: 2-column card grid on desktop, single column on mobile. Each card shows role, area, location, type and a "View Details" link to the (still-stub) job page. -->
     <section class="section-space section-muted current-openings-section">
       <div class="container">
         <div class="section-heading text-center">
@@ -195,6 +199,7 @@
       </div>
     </section>
 
+    <!-- Benefits & perks: simple list with gold bullets. Uses a 4 / 2 / 1 column CSS grid so it adapts cleanly from desktop down to mobile. -->
     <section class="section-space benefits-section">
       <div class="container">
         <div class="section-heading text-center">
@@ -213,6 +218,7 @@
       </div>
     </section>
 
+    <!-- Application form: name/email/phone, position select, cover letter, resume upload (the real file input is visually hidden — the dashed drop area is the visible label) and an optional LinkedIn URL. The submit button is a type="button" that opens the success modal below for now; switch back to type="submit" once the backend is wired up. -->
     <section class="section-space section-muted application-form-section">
       <div class="container">
         <div class="section-heading text-center">
@@ -277,6 +283,7 @@
       </div>
     </section>
 
+    <!-- Success modal: Bootstrap modal triggered by the form's submit button. Shows a tick icon and a thank-you message. The same .application-modal style is reused for the contact form's success state. -->
     <div class="modal fade application-modal" id="applicationSuccessModal" tabindex="-1" role="dialog" aria-labelledby="applicationSuccessModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -298,6 +305,7 @@
     </div>
   </main>
 
+  <!-- Footer: 4-column layout — brand & socials, practice areas, quick links, and contact info — followed by a thin bar with the copyright and legal links. Same footer is used on every page. -->
   <footer class="footer-section">
     <div class="container">
       <div class="row g-4 gy-lg-0">
@@ -349,6 +357,7 @@
     </div>
   </footer>
 
+  <!-- Bootstrap bundle drives the navbar collapse, dropdowns and any modals. UserWay adds an accessibility menu — pinned to the bottom-right via CSS so it doesn't clash with the sticky navbar. -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://cdn.userway.org/widget.js" data-account="FREE"></script>
 </body>
