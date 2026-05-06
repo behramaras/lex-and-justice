@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Sticky navbar: stays pinned to the top while scrolling and collapses into a hamburger menu on smaller screens. The Services item opens a dropdown linking into each practice area. This whole navbar is repeated on every page; only the "active" class moves to mark the current page. -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white main-navbar sticky-top border-bottom">
       <div class="container">
@@ -47,6 +48,7 @@
   </header>
 
   <main>
+    <!-- Page hero: shared .services-hero block, with .contact-hero just nudging up the minimum height to match the other inner pages. -->
     <section class="services-hero contact-hero">
       <div class="container">
         <div class="hero-content services-hero-content">
@@ -56,6 +58,7 @@
       </div>
     </section>
 
+    <!-- Main contact area: form on the left (≈58%), contact details on the right (≈42%). On mobile the columns stack with the form on top. The form's submit is a type="button" wired to the success modal below; switch back to type="submit" once the inquiry endpoint is live. The right column also hosts an emergency-contact card so urgent calls don't have to scroll for a number. -->
     <section class="section-space contact-main-section">
       <div class="container">
         <div class="row g-5">
@@ -171,6 +174,7 @@
       </div>
     </section>
 
+    <!-- Success modal: same .application-modal style used on the careers page (tick icon + thank-you message). Triggered by the contact form's submit button until a real backend is wired up. -->
     <div class="modal fade application-modal" id="contactSuccessModal" tabindex="-1" role="dialog" aria-labelledby="contactSuccessModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -192,6 +196,7 @@
     </div>
   </main>
 
+  <!-- Footer: 4-column layout — brand & socials, practice areas, quick links, and contact info — followed by a thin bar with the copyright and legal links. Same footer is used on every page. -->
   <footer class="footer-section">
     <div class="container">
       <div class="row g-4 gy-lg-0">
@@ -243,6 +248,7 @@
     </div>
   </footer>
 
+  <!-- Bootstrap bundle drives the navbar collapse, dropdowns and any modals. UserWay adds an accessibility menu — pinned to the bottom-right via CSS so it doesn't clash with the sticky navbar. -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://cdn.userway.org/widget.js" data-account="FREE"></script>
 </body>
