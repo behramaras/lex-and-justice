@@ -2031,6 +2031,153 @@ textarea.contact-input {
   text-decoration: underline;
 }
 
+/* ===== TESTIMONIALS MASONRY ===== */
+/* Bootstrap 5 masonry grid — varying card heights create a natural
+   brick-like layout. data-masonry attribute on the row activates Masonry.js */
+
+.testimonial-item {
+  background-color: var(--white);
+  border: 1px solid var(--line-200);
+  border-radius: 4px;
+  padding: 28px 26px 22px;
+}
+
+.testimonial-quote {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 5rem;
+  color: var(--gold-500);
+  line-height: 0.8;
+  margin-bottom: 14px;
+}
+
+.testimonial-item p {
+  color: var(--text-600);
+  font-size: 0.97rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.testimonial-author-block {
+  border-top: 1px solid var(--line-200);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.testimonial-author-block strong {
+  font-size: 1rem;
+  color: var(--text-900);
+  font-family: "Inter", sans-serif;
+}
+
+.testimonial-author-block span {
+  font-size: 0.88rem;
+  color: var(--text-600);
+}
+
+/* ===== NEWS — CATEGORY FILTER (CSS-only) ===== */
+/* Pill row scrolls horizontally; radios drive :checked rules on .news-grid. */
+
+.news-filter-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.news-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.48rem 1.15rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  white-space: nowrap;
+  border-radius: 999px;
+  border: 1px solid var(--line-200);
+  color: var(--text-600);
+  background-color: var(--white);
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.news-filter-pill:hover {
+  border-color: var(--navy-700);
+  color: var(--text-900);
+}
+
+#news-filter-all:checked ~ .news-filter-scroll label[for="news-filter-all"],
+#news-filter-corporate-law:checked ~ .news-filter-scroll label[for="news-filter-corporate-law"],
+#news-filter-family-law:checked ~ .news-filter-scroll label[for="news-filter-family-law"],
+#news-filter-real-estate-law:checked ~ .news-filter-scroll label[for="news-filter-real-estate-law"],
+#news-filter-employment-law:checked ~ .news-filter-scroll label[for="news-filter-employment-law"],
+#news-filter-estate-planning:checked ~ .news-filter-scroll label[for="news-filter-estate-planning"],
+#news-filter-litigation:checked ~ .news-filter-scroll label[for="news-filter-litigation"] {
+  background-color: var(--navy-900);
+  border-color: var(--navy-900);
+  color: var(--white);
+}
+
+#news-filter-all:checked ~ .news-grid .news-card-col {
+  display: block;
+}
+
+#news-filter-corporate-law:checked ~ .news-grid .news-card-col {
+  display: none !important;
+}
+
+#news-filter-corporate-law:checked ~ .news-grid .news-card-col:has([data-category="corporate-law"]) {
+  display: block !important;
+}
+
+#news-filter-family-law:checked ~ .news-grid .news-card-col {
+  display: none !important;
+}
+
+#news-filter-family-law:checked ~ .news-grid .news-card-col:has([data-category="family-law"]) {
+  display: block !important;
+}
+
+#news-filter-real-estate-law:checked ~ .news-grid .news-card-col {
+  display: none !important;
+}
+
+#news-filter-real-estate-law:checked ~ .news-grid .news-card-col:has([data-category="real-estate-law"]) {
+  display: block !important;
+}
+
+#news-filter-employment-law:checked ~ .news-grid .news-card-col {
+  display: none !important;
+}
+
+#news-filter-employment-law:checked ~ .news-grid .news-card-col:has([data-category="employment-law"]) {
+  display: block !important;
+}
+
+#news-filter-estate-planning:checked ~ .news-grid .news-card-col {
+  display: none !important;
+}
+
+#news-filter-estate-planning:checked ~ .news-grid .news-card-col:has([data-category="estate-planning"]) {
+  display: block !important;
+}
+
+#news-filter-litigation:checked ~ .news-grid .news-card-col {
+  display: none !important;
+}
+
+#news-filter-litigation:checked ~ .news-grid .news-card-col:has([data-category="litigation"]) {
+  display: block !important;
+}
+
 /* ===== USERWAY ACCESSIBILITY WIDGET ===== */
 /* UserWay injects its toggle button at runtime and tries
    to position itself wherever it likes. We pin it bottom-
