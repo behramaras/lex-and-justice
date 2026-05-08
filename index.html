@@ -194,43 +194,71 @@
       </div>
     </section>
 
-    <!-- Testimonials: three client quote cards. Each card has the gold quote icon, the testimonial text, the author name and their role/company. -->
+    <!-- Testimonials: Bootstrap 5 masonry grid — cards have varying heights due to
+         different quote lengths, creating a natural brick-like arrangement -->
     <section class="section-space testimonials-section">
       <div class="container">
         <div class="section-heading text-center">
           <h2>What Our Clients Say</h2>
         </div>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4">
-            <article class="card testimonial-card h-100">
-              <div class="card-body">
-                <span class="quote-mark"><i class="bi bi-quote" aria-hidden="true"></i></span>
-                <p>Lex &amp; Justice provided exceptional guidance during our merger. Their expertise was invaluable.</p>
-                <h3 class="testimonial-author">Sarah Johnson</h3>
-                <small>CEO, TechCorp</small>
+
+        <div class="row" data-masonry='{"percentPosition": true }'>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="testimonial-item">
+              <span class="testimonial-quote" aria-hidden="true">"</span>
+              <p>Lex &amp; Justice provided exceptional guidance during our merger. Their expertise in corporate law was invaluable — they anticipated every issue before it arose and kept the deal on track from start to finish.</p>
+              <div class="testimonial-author-block">
+                <strong>Sarah Johnson</strong>
+                <span>CEO, TechCorp</span>
               </div>
             </article>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <article class="card testimonial-card h-100">
-              <div class="card-body">
-                <span class="quote-mark"><i class="bi bi-quote" aria-hidden="true"></i></span>
-                <p>Professional, compassionate, and highly effective. They helped me through a difficult divorce with care.</p>
-                <h3 class="testimonial-author">Michael Chen</h3>
-                <small>Private Client</small>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="testimonial-item">
+              <span class="testimonial-quote" aria-hidden="true">"</span>
+              <p>Professional, compassionate, and highly effective. They helped me through a difficult divorce with real care and clarity.</p>
+              <div class="testimonial-author-block">
+                <strong>Michael Chen</strong>
+                <span>Private Client</span>
               </div>
             </article>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <article class="card testimonial-card h-100">
-              <div class="card-body">
-                <span class="quote-mark"><i class="bi bi-quote" aria-hidden="true"></i></span>
-                <p>Their corporate law team is simply outstanding. They understood our needs and delivered results.</p>
-                <h3 class="testimonial-author">David Rodriguez</h3>
-                <small>CFO, Global Industries</small>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="testimonial-item">
+              <span class="testimonial-quote" aria-hidden="true">"</span>
+              <p>Their corporate law team is simply outstanding. They took the time to understand our business, not just the legal question, and delivered results that exceeded our expectations.</p>
+              <div class="testimonial-author-block">
+                <strong>David Rodriguez</strong>
+                <span>CFO, Global Industries</span>
               </div>
             </article>
           </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="testimonial-item">
+              <span class="testimonial-quote" aria-hidden="true">"</span>
+              <p>From the very first consultation, the team made me feel heard. Highly recommend to anyone facing a family law matter.</p>
+              <div class="testimonial-author-block">
+                <strong>Priya Patel</strong>
+                <span>Family Law Client</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <article class="testimonial-item">
+              <span class="testimonial-quote" aria-hidden="true">"</span>
+              <p>Lex &amp; Justice handled our real estate transaction with speed and precision. Every detail was covered and we completed on time without a single issue.</p>
+              <div class="testimonial-author-block">
+                <strong>James Okafor</strong>
+                <span>Property Developer</span>
+              </div>
+            </article>
+          </div>
+
         </div>
       </div>
     </section>
@@ -280,7 +308,7 @@
         <div class="col-md-6 col-lg-3">
           <h2 class="footer-col-title">Contact Info</h2>
           <ul class="list-unstyled footer-contact">
-            <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>123 Legal District<br>London, SE10 0AS</span></li>
+            <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Lex &amp; Justice London office<br>10 Downing Street<br>London SW1A 2AA</span></li>
             <li><i class="bi bi-telephone" aria-hidden="true"></i><span>+(44) 7555-1234</span></li>
             <li><i class="bi bi-envelope" aria-hidden="true"></i><span>info@lexjustice.com</span></li>
           </ul>
@@ -299,6 +327,20 @@
 
   <!-- Bootstrap bundle drives the navbar collapse, dropdowns and any modals. UserWay adds an accessibility menu — pinned to the bottom-right via CSS so it doesn't clash with the sticky navbar. -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+  <!-- Masonry layout for testimonials — Bootstrap 5 requires Masonry.js for the data-masonry attribute to work -->
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var grid = document.querySelector('.testimonials-section .row[data-masonry]');
+      if (!grid || typeof Masonry === 'undefined') return;
+      var opts = {};
+      try {
+        opts = JSON.parse(grid.getAttribute('data-masonry') || '{}');
+      } catch (e) {}
+      Object.assign(opts, { itemSelector: '.col-md-6' });
+      new Masonry(grid, opts);
+    });
+  </script>
   <script src="https://cdn.userway.org/widget.js" data-account="FREE"></script>
 </body>
 </html>
