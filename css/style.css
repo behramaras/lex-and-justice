@@ -2031,18 +2031,37 @@ textarea.contact-input {
   text-decoration: underline;
 }
 
-/* ===== TESTIMONIALS MASONRY ===== */
-/* Bootstrap 5 masonry grid — varying card heights create a natural
-   brick-like layout. data-masonry attribute on the row activates Masonry.js */
+/* ===== TESTIMONIALS — HORIZONTAL SCROLL ===== */
+/* Scoped to .testimonials-section so global .testimonial-card rules elsewhere
+   stay unaffected. Track uses overflow-x; wheel + arrows handled in index.html. */
 
-.testimonial-item {
-  background-color: var(--white);
-  border: 1px solid var(--line-200);
-  border-radius: 4px;
+.testimonials-section .testimonials-scroll-track {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-200) transparent;
+}
+
+.testimonials-section .testimonials-scroll-track:focus {
+  outline: 2px solid var(--gold-500);
+  outline-offset: 2px;
+}
+
+.testimonials-section .testimonial-scroll-card {
+  border-color: var(--line-200) !important;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.testimonials-section .testimonial-scroll-card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(3, 20, 45, 0.12) !important;
+  transform: translateY(-3px);
+}
+
+.testimonials-section .testimonial-scroll-card .card-body {
   padding: 28px 26px 22px;
 }
 
-.testimonial-quote {
+.testimonials-section .testimonial-quote {
   display: block;
   font-family: "Cormorant Garamond", serif;
   font-size: 5rem;
@@ -2051,14 +2070,14 @@ textarea.contact-input {
   margin-bottom: 14px;
 }
 
-.testimonial-item p {
+.testimonials-section .testimonial-scroll-card p {
   color: var(--text-600);
   font-size: 0.97rem;
   line-height: 1.7;
   margin-bottom: 18px;
 }
 
-.testimonial-author-block {
+.testimonials-section .testimonial-author-block {
   border-top: 1px solid var(--line-200);
   padding-top: 12px;
   display: flex;
@@ -2066,15 +2085,31 @@ textarea.contact-input {
   gap: 3px;
 }
 
-.testimonial-author-block strong {
+.testimonials-section .testimonial-author-block strong {
   font-size: 1rem;
   color: var(--text-900);
   font-family: "Inter", sans-serif;
 }
 
-.testimonial-author-block span {
+.testimonials-section .testimonial-author-block span {
   font-size: 0.88rem;
   color: var(--text-600);
+}
+
+.testimonials-section .testimonials-scroll-btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-color: var(--line-200);
+  color: var(--navy-900);
+}
+
+.testimonials-section .testimonials-scroll-btn:hover {
+  border-color: var(--navy-700);
+  background-color: var(--bg-soft);
+  color: var(--navy-900);
 }
 
 /* ===== NEWS — CATEGORY FILTER (CSS-only) ===== */
