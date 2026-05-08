@@ -64,9 +64,31 @@
     <section class="section-space news-grid-section" aria-labelledby="latestArticlesHeading">
       <div class="container">
         <h2 id="latestArticlesHeading" class="visually-hidden">Latest Articles</h2>
+        <!--
+          Category filter: CSS-only using visually hidden radios and :checked ~ sibling selectors.
+          Full behaviour (URL params, animated transitions, counts) would use JavaScript on the data-category attributes below.
+        -->
+        <input type="radio" name="news-filter" id="news-filter-all" class="visually-hidden" autocomplete="off" checked>
+        <input type="radio" name="news-filter" id="news-filter-corporate-law" class="visually-hidden" autocomplete="off">
+        <input type="radio" name="news-filter" id="news-filter-family-law" class="visually-hidden" autocomplete="off">
+        <input type="radio" name="news-filter" id="news-filter-real-estate-law" class="visually-hidden" autocomplete="off">
+        <input type="radio" name="news-filter" id="news-filter-employment-law" class="visually-hidden" autocomplete="off">
+        <input type="radio" name="news-filter" id="news-filter-estate-planning" class="visually-hidden" autocomplete="off">
+        <input type="radio" name="news-filter" id="news-filter-litigation" class="visually-hidden" autocomplete="off">
+
+        <div class="news-filter-scroll mb-4" role="group" aria-label="Filter articles by category">
+          <label class="news-filter-pill" for="news-filter-all">All</label>
+          <label class="news-filter-pill" for="news-filter-corporate-law">Corporate Law</label>
+          <label class="news-filter-pill" for="news-filter-family-law">Family Law</label>
+          <label class="news-filter-pill" for="news-filter-real-estate-law">Real Estate Law</label>
+          <label class="news-filter-pill" for="news-filter-employment-law">Employment Law</label>
+          <label class="news-filter-pill" for="news-filter-estate-planning">Estate Planning</label>
+          <label class="news-filter-pill" for="news-filter-litigation">Litigation</label>
+        </div>
+
         <div class="row g-4 news-grid">
           <div class="col-12 col-sm-6 col-lg-4 news-card-col">
-            <article class="news-card">
+            <article class="news-card" data-category="corporate-law">
               <a class="news-card-media" href="under-construction.html" aria-label="Read: New Corporate Governance Regulations">
                 <img src="assets/img/news/corporate-law.jpg" alt="Skyline of corporate office buildings illustrating corporate governance topics" loading="lazy">
               </a>
@@ -89,7 +111,7 @@
           </div>
 
           <div class="col-12 col-sm-6 col-lg-4 news-card-col">
-            <article class="news-card">
+            <article class="news-card" data-category="family-law">
               <a class="news-card-media" href="under-construction.html" aria-label="Read: Understanding Child Custody Modifications">
                 <img src="assets/img/news/family-law.png" alt="A parent and child holding hands, representing family law matters" loading="lazy">
               </a>
@@ -112,7 +134,7 @@
           </div>
 
           <div class="col-12 col-sm-6 col-lg-4 news-card-col">
-            <article class="news-card">
+            <article class="news-card" data-category="real-estate-law">
               <a class="news-card-media" href="under-construction.html" aria-label="Read: Commercial Real Estate Trends">
                 <img src="assets/img/news/real-estate-law.png" alt="Modern commercial buildings representing real estate law transactions" loading="lazy">
               </a>
@@ -135,7 +157,7 @@
           </div>
 
           <div class="col-12 col-sm-6 col-lg-4 news-card-col">
-            <article class="news-card">
+            <article class="news-card" data-category="employment-law">
               <a class="news-card-media" href="under-construction.html" aria-label="Read: Workplace Harassment Policies">
                 <img src="assets/img/news/employment-law.png" alt="Professionals in a modern workplace, illustrating employment law topics" loading="lazy">
               </a>
@@ -158,7 +180,7 @@
           </div>
 
           <div class="col-12 col-sm-6 col-lg-4 news-card-col">
-            <article class="news-card">
+            <article class="news-card" data-category="estate-planning">
               <a class="news-card-media" href="under-construction.html" aria-label="Read: Update Your Estate Plan in 2026">
                 <img src="assets/img/news/estate-planning.png" alt="Legal documents and a fountain pen representing estate planning" loading="lazy">
               </a>
@@ -181,7 +203,7 @@
           </div>
 
           <div class="col-12 col-sm-6 col-lg-4 news-card-col">
-            <article class="news-card">
+            <article class="news-card" data-category="litigation">
               <a class="news-card-media" href="under-construction.html" aria-label="Read: Cross-Border Tax Strategies">
                 <img src="assets/img/news/tax-law.png" alt="Calculator and financial documents representing tax law and compliance" loading="lazy">
               </a>
@@ -259,7 +281,7 @@
         <div class="col-md-6 col-lg-3">
           <h2 class="footer-col-title">Contact Info</h2>
           <ul class="list-unstyled footer-contact">
-            <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>123 Legal District<br>London, SE10 0AS</span></li>
+            <li><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Lex &amp; Justice London office<br>10 Downing Street<br>London SW1A 2AA</span></li>
             <li><i class="bi bi-telephone" aria-hidden="true"></i><span>+(44) 7555-1234</span></li>
             <li><i class="bi bi-envelope" aria-hidden="true"></i><span>info@lexjustice.com</span></li>
           </ul>
