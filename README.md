@@ -1,6 +1,6 @@
 # Lex & Justice
 
-Lex & Justice is a student-built website for a fictional London-based professional law firm. The site presents the firm as a full-service practice with corporate, family, real estate, employment, estate planning, and tax capabilities, and surfaces typical marketing pages such as services, team profiles, news, careers, and contact.
+Lex & Justice is a website for a fictional London-based professional law firm. The site presents the firm as a full-service practice with corporate, family, real estate, employment, estate planning, and tax capabilities, and surfaces typical marketing pages such as services, team profiles, news, careers, and contact.
 
 **View Site** → [Lex & Justice](https://behramaras.github.io/lex-and-justice/)
 
